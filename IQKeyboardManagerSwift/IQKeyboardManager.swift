@@ -2068,6 +2068,9 @@ open class IQKeyboardManager: NSObject, UIGestureRecognizerDelegate {
                             toolbar.titleBarButton.title = nil
                         }
                         
+                        guard siblings.count > 0 else {
+                            return
+                        }
                         //In case of UITableView (Special), the next/previous buttons has to be refreshed everytime.    (Bug ID: #56)
                         //	If firstTextField, then previous should not be enabled.
                         if siblings[0] == textField {
